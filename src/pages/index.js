@@ -1,4 +1,5 @@
-import Header from "@/components/header";
+
+import Header from "../components/Header";
 import Head from "next/head";
 
 export default function Home() {
@@ -7,7 +8,6 @@ export default function Home() {
       <Head>
         <title>Amazon 2.0</title>
       </Head>
-
       <Header/>
     </div>
   );
