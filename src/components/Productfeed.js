@@ -1,7 +1,13 @@
 import React from 'react'
 
-export const Productfeed = () => {
+export const Productfeed = ({products}) => {
+  // console.log({products})
   return (
-    <div>Productfeed</div>
+    <div>
+      <h1>Products here ...</h1>
+      {products.map(product => (
+        <p>{ product.title}</p>
+      )) }
+    </div>
   )
 }
