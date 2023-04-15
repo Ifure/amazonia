@@ -3,11 +3,16 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 
 export const Product = ({id, description, category, title, image}) => {
-  const[rating] = useState(1)
+  const MIN_RATING = 1
+  const MAX_RATING = 5
+  const[rating] = useState(
+    Math.floor(Math.random() * (MAX_RATING  - MIN_RATING + 1) )+ MIN_RATING  //to generate random number
+  )
+
   return (
     <div>
       <p>{category}</p>
-      <Image  src={image} height={200} width={200} classname="object-contain"/>
+      <Image  src={image} height={700} width={200} className="object-contain"   alt=''/>
       <h4>{title}</h4>
 
       <div>
@@ -17,6 +22,7 @@ export const Product = ({id, description, category, title, image}) => {
           <StarIcon key={i} className='h-5' />
           ))}
       </div>
+      
     </div>
   )
 }
