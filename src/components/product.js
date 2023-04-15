@@ -1,7 +1,8 @@
 import { StarIcon } from '@heroicons/react/solid'
 import React, { useState } from 'react'
+import Image from 'next/image'
 
-export const product = ({id, description, category, title, image}) => {
+export const Product = ({id, description, category, title, image}) => {
   const[rating] = useState(1)
   return (
     <div>
@@ -12,9 +13,9 @@ export const product = ({id, description, category, title, image}) => {
       <div>
         {Array(rating)
         .fill()
-        .map((_, 1) => (
-          <StarIcon />
-        ))}
+        .map((_, i) => (
+          <StarIcon key={i} className='h-5' />
+          ))}
       </div>
     </div>
   )
