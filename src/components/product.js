@@ -6,7 +6,6 @@ import Currency from "react-currency-formatter";
 
 export const Product = ({ id, description, category, title, image, price }) => {
 
-
   const MIN_RATING = 1;
   const MAX_RATING = 5;
 
@@ -26,13 +25,14 @@ export const Product = ({ id, description, category, title, image, price }) => {
         alt=""
       />
       <h4  className="my-3">{title}</h4>
-
       <div className="flex">
-        {Array(rating)
+      <>
+      {Array(rating)
           .fill()
           .map((_, i) => (
             <StarIcon key={i} className="h-5  text-yellow-500" />
           ))}
+      </>
       </div>
       <p className="text-xs my-2 line-clamp-2">{description}</p>
       <div className="mb-5">

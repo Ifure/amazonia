@@ -36,6 +36,19 @@ export const Productfeed = ({ products }) => {
           />
         ))}
         </div>
+        {products
+        .slice(5, products.length)
+        .map(({ title, id, description, category, image, price }) => (
+          <Product
+            key={id}
+            id={id}
+            tiitle={title}
+            description={description}
+            image={image}
+            category={category}
+            price={price}
+          />
+        ))}
       </div>
     </>
   );
