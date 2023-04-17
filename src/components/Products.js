@@ -1,7 +1,9 @@
 import React from 'react'
 import { useState } from 'react';
+import Image from "next/image";
+import { StarIcon } from "@heroicons/react/solid";
 
-const Products = () => {
+const Products = ({ id, description, category, title, image, price }) => {
   const MIN_RATING = 1;
   const MAX_RATING = 5;
 
