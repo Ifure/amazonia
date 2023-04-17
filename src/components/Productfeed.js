@@ -1,5 +1,6 @@
 import React from "react";
-import Product  from "./Product";
+// import Product  from "./Product";
+import Products from "./Products";
 
 export const Productfeed = ({ products }) => {
   // console.log({products})
@@ -10,7 +11,7 @@ export const Productfeed = ({ products }) => {
         {products
         .slice(0, 4)
         .map(({ title, id, description, category, image, price }) => (
-          <Product
+          <Products
             key={id}
             id={id}
             tiitle={title}
@@ -25,7 +26,7 @@ export const Productfeed = ({ products }) => {
         {products
         .slice(4, 5)
         .map(({ title, id, description, category, image, price }) => (
-          <Product
+          <Products
             key={id}
             id={id}
             tiitle={title}
@@ -39,7 +40,7 @@ export const Productfeed = ({ products }) => {
         {products
         .slice(5, products.length)
         .map(({ title, id, description, category, image, price }) => (
-          <Product
+          <Products
             key={id}
             id={id}
             tiitle={title}
