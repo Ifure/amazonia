@@ -21,7 +21,7 @@ export const Product = ({ id, description, category, title, image, price }) => {
         src={image}
         height={200}
         width={200}
-        // className="object-contain "
+        className="object-contain "
         alt=""
       />
       <h4  className="my-3">{title}</h4>
