@@ -1,5 +1,5 @@
 import React from "react";
-import { Product } from "./Product";
+import Product  from "./Product";
 
 export const Productfeed = ({ products }) => {
   // console.log({products})
