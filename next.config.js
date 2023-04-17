@@ -7,6 +7,9 @@
 // }
 
 module.exports = {
+  eslint: {
+    ignoreDuringBuilds: true,
+},
   images: {
     remotePatterns: [
       {
@@ -23,7 +26,5 @@ module.exports = {
       },
     ],
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-},
+  
 }
