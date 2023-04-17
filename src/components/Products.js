@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react';
 
 const Products = () => {
   const MIN_RATING = 1;
