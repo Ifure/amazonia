@@ -21,18 +21,18 @@ export const Product = ({ id, description, category, title, image, price }) => {
         src={image}
         height={200}
         width={200}
-        className="object-contain "
+        // className="object-contain "
         alt=""
       />
       <h4  className="my-3">{title}</h4>
       <div className="flex">
-      <div>
+ 
       {Array(rating)
           .fill()
           .map((_, i) => (
             <StarIcon key={i} className="h-5  text-yellow-500" />
           ))}
-      </div>
+  
       </div>
       <p className="text-xs my-2 line-clamp-2">{description}</p>
       <div className="mb-5">
