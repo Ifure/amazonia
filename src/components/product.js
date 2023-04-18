@@ -8,7 +8,6 @@ export const Product = ({ id, description, category, title, image, price }) => {
 
   const MIN_RATING = 1;
   const MAX_RATING = 5;
-
   const [rating] = useState(
     Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING //to generate random number
   );

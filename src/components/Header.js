@@ -4,6 +4,7 @@ import React from "react";
 import {signIn, signOut, useSession} from "next-auth/react"
 
 function Header() {
+  const { data: session } = useSession();
   return (
     <header>
         {/* header */}
@@ -28,8 +29,10 @@ function Header() {
           
         </div>
         <div className="text-xs flex items-center  space-x-6 text-white whitespace-nowrap">
-          <div onClick={signIn} className="link">
-            <p className="">Hello Ifie</p>
+          <div onClick={ !session ? signIn : signOut} className="link">
+            <p className="">
+              {/* {session ? `hello, ${session.user.name}` : 'signIn'} */} hello
+            </p>
             <p className="font-extrabold md:text-sm ">Accounts  &  Lists</p>
           </div>
           <div className="link">
