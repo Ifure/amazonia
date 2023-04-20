@@ -31,7 +31,7 @@ function Header() {
         <div className="text-xs flex items-center  space-x-6 text-white whitespace-nowrap">
           <div onClick={ !session ? signIn : signOut} className="link">
             <p className="">
-              {/* {session ? `hello, ${session.user.name}` : 'signIn'} */} hello
+              {session ? `Hello, ${session.user.name}` : 'SignIn'}
             </p>
             <p className="font-extrabold md:text-sm ">Accounts  &  Lists</p>
           </div>
