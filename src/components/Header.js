@@ -1,55 +1,67 @@
 import Image from "next/image";
-import {MenuIcon, SearchIcon, ShoppingCartIcon} from  '@heroicons/react/solid'
+import { MenuIcon, SearchIcon, ShoppingCartIcon } from "@heroicons/react/solid";
 import React from "react";
-import {signIn, signOut, useSession} from "next-auth/react"
+import { signIn, signOut, useSession } from "next-auth/react";
+import Link from "next/link";
+import { useSelector } from "react-redux";
+import { selectItems } from "../sllices/basketSlice";
 
 function Header() {
   const { data: session } = useSession();
+  const  items = useSelector(selectItems)
+  
   return (
     <header>
-        {/* header */}
+      {/* header */}
       <div className="bg-amazon_blue items-center flex space-x-4 py-2  p-5 flex-grow">
         <div className="mt-2 flex items-center flex-grow sm:flex-grow-0">
-          <Image
-            src=" https://links.papareact.com/f90"
-            width={150}
-            height={40}
-            className="object-containpointer  cursor-pointer"
-            alt="logo"
-          />
+          <Link href="/">
+            <Image
+              src=" https://links.papareact.com/f90"
+              width={150}
+              height={40}
+              className="object-containpointer  cursor-pointer"
+              alt="logo"
+            />
+          </Link>
         </div>
         {/* search */}
         <div className="hidden sm:flex flex-center h-10 rounded-md  flex-grow bg-yellow-400 hover:bg-yellow-500  cursor-pointer">
-        {/* <h2>hello</h2> */}
-          <input 
-          className="p-2 h-full  w-6 flex-grow flex-shrink rounded-l-md focus:outline-none"
-          type="text" 
+          {/* <h2>hello</h2> */}
+          <input
+            className="p-2 h-full  w-6 flex-grow flex-shrink rounded-l-md focus:outline-none"
+            type="text"
           />
-          <SearchIcon className="h-12 p-4 "/>
-          
+          <SearchIcon className="h-12 p-4 " />
         </div>
         <div className="text-xs flex items-center  space-x-6 text-white whitespace-nowrap">
-          <div onClick={ !session ? signIn : signOut} className="link">
+          <div onClick={!session ? signIn : signOut} className="link">
             <p className="">
-              {session ? `Hello, ${session.user.name}` : 'SignIn'}
+              {session ? `Hello, ${session.user.name}` : "SignIn"}
             </p>
-            <p className="font-extrabold md:text-sm ">Accounts  &  Lists</p>
+            <p className="font-extrabold md:text-sm ">Accounts & Lists</p>
           </div>
           <div className="link">
             <p>Returns</p>
             <p className="font-extrabold md:text-sm ">& Orders</p>
           </div>
-          <div className="link relative flex items-center">
-            <span className=" absolute top-0 right-0 md:right-12 h-4 w-4  bg-yellow-400 text-black font-bold rounded-full   text-center">0</span>
-            <ShoppingCartIcon className='h-10'  />
-            <p className="hidden md:inline font-extrabold md:text-sm mt-2">Basket</p>
-          </div>
+          <Link href='/checkout'>
+            <div className="link relative flex items-center">
+              <span className=" absolute top-0 right-0 md:right-12 h-4 w-4  bg-yellow-400 text-black font-bold rounded-full   text-center">
+               {items.length}
+              </span>
+              <ShoppingCartIcon className="h-10" />
+              <p className="hidden md:inline font-extrabold md:text-sm mt-2">
+                Basket
+              </p>
+            </div>
+          </Link>
         </div>
       </div>
       <div className="flex items-center   space-x-3 bg-amazon_blue-light p-2 sm:pl-6   text-white text-sm whitespace-nowrap">
         <p className="link flex items-center">
-          <MenuIcon  className="h-6 mr-1"/>
-          All 
+          <MenuIcon className="h-6 mr-1" />
+          All
         </p>
         <p className="link">Prime Video</p>
         <p className="link">Amazon Business</p>
