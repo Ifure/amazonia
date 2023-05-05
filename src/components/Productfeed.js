@@ -14,7 +14,7 @@ export const Productfeed = ({ products }) => {
           <Products
             key={id}
             id={id}
-            tiitle={title}
+            title={title}
             description={description}
             image={image}
             category={category}
@@ -29,7 +29,7 @@ export const Productfeed = ({ products }) => {
           <Products
             key={id}
             id={id}
-            tiitle={title}
+            title={title}
             description={description}
             image={image}
             category={category}
@@ -43,7 +43,7 @@ export const Productfeed = ({ products }) => {
           <Products
             key={id}
             id={id}
-            tiitle={title}
+            title={title}
             description={description}
             image={image}
             category={category}
