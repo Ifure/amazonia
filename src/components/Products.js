@@ -60,9 +60,15 @@ const Products = ({ id, description, category, title, image, price }) => {
           <p className="text-xs text-gray-500">FREE next-day delivery </p>
         </div>
       )}
-      <button onClick={addItemToBasket} className="mt-auto button">
+     <div>
+
+     <button onClick={addItemToBasket} className=" button">
         Add to Basket
       </button>
+      <button className=" button">
+        Remove from basket
+      </button>
+     </div>
     </div>
   );
 };

@@ -8,7 +8,7 @@ const CheckoutProduct = ({ id, category, title, image, price, hasPrime, descript
     <div className='grid grid-cols-5'>
         <Image src={image} alt='' width={200} height={200} />
         <div className='col-span-3 mx-5'>
-            <p className='text-red-700  border'>{title}</p>
+            <p className='text-[18px] font-semibold'>{title}</p>
             <div className='flex'>
                 {Array(rating)
                 .fill()
